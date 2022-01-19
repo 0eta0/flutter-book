@@ -1,8 +1,8 @@
 name: Distribute beta ios app with app distribution
 
-on:
-  push:
-    branches: [ feat/ci ]
+# on:
+#   push:
+#     branches: [ main ]
 
 jobs:
   distribute_iOS:
@@ -21,8 +21,6 @@ jobs:
 
       - name: Download Flutter packages
         run: flutter pub get
-
-      - 
 
       - name: Import Provisioning Profile
         run: | # 複数行の run を書きたい場合はこうする 以下、Provisioning Profilesを置くべきディレクトリにデコードしている
