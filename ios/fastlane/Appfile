@@ -1,0 +1,8 @@
+app_identifier("dev.eita.ios.pokemon-flutter-demo") # The bundle identifier of your app
+apple_id("eta.develop@gmail.com") # Your Apple email address
+
+itc_team_id("117850214") # App Store Connect Team ID
+team_id("339P82ZNV5") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

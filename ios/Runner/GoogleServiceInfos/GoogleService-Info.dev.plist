@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>629913001281-5av1lmrrtqcsqtadvbrjnaubn64ofa1r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.629913001281-5av1lmrrtqcsqtadvbrjnaubn64ofa1r</string>
+	<key>API_KEY</key>
+	<string>AIzaSyApwEI2I6m4wHGYhmuSDJTbsHv3F-kwC0k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>629913001281</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>dev.eita.ios.pokemon-flutter-demo.develop</string>
+	<key>PROJECT_ID</key>
+	<string>flutter-appdistribution-dev</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flutter-appdistribution-dev.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:629913001281:ios:87e4951171920e221455c0</string>
+</dict>
+</plist>
