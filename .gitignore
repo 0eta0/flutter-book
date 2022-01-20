@@ -49,3 +49,7 @@ app.*.map.json
 
 vendor/
 .bundle/config
+
+FirebaseCredentials/
+
+node_modules/

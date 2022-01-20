@@ -24,7 +24,8 @@ setup_appdistribution:
 	$(FASTLANE) run firebase_app_distribution_login
 
 distribute_with_firebase:
-	$(FASTLANE) run distribute_with_firebase
+	$(FASTLANE) distribute_with_firebase
 
 distribute_with_testflight:
-	$(FASTLANE) run distribute_with_testflight
+	$(FASTLANE) distribute_with_testflight
+

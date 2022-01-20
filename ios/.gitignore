@@ -34,3 +34,8 @@ Runner/GeneratedPluginRegistrant.*
 !default.perspectivev3
 
 Runner/GoogleService-Info.plist
+
+fastlane/AppStoreApiKey/
+
+*.ipa
+*.app.dSYM.zip
