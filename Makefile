@@ -7,14 +7,14 @@ bundle_install:
 	bundle install --path=vendor/bundle --jobs 4 --retry 3
 
 flutter_build_dev_ios:
-	flutter build ipa --export-options-plist=./ios/fastlane/ExportOptions/AdHocExportOptions.plist \
+	flutter build ipa --release --export-options-plist=./ios/fastlane/ExportOptions/AdHocExportOptions.plist \
 		--dart-define APP_NAME=DEV-PokemonFlutter \
 		--dart-define APP_BUNDLE_SUFF=.dev \
 		--dart-define APP_PROVISIONING_PROFILE_SPECIFIER="match AdHoc dev.eita.ios.pokemon-flutter-demo.dev" \
 		--dart-define APP_ENV=dev
 
 flutter_build_prod_ios:
-	flutter build ipa --export-options-plist=./ios/fastlane/ExportOptions/ReleaseExportOptions.plist \
+	flutter build ipa --release --export-options-plist=./ios/fastlane/ExportOptions/ReleaseExportOptions.plist \
 		--dart-define APP_NAME=PokemonFlutter \
 		--dart-define APP_BUNDLE_SUFF="" \
 		--dart-define APP_PROVISIONING_PROFILE_SPECIFIER="match AppStore dev.eita.ios.pokemon-flutter-demo" \
