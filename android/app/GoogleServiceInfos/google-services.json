@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "492289823813",
+    "project_id": "flutter-appdistribution",
+    "storage_bucket": "flutter-appdistribution.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492289823813:android:0a806c09bc821ba32dff2c",
+        "android_client_info": {
+          "package_name": "dev.eita.android.pokemon_flutter_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492289823813-fb1v899trnhp96pa7nennv6gnlq6edpe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS8Ooxntd2-yb2gBqGH7XhamSDhJg_Bc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492289823813-fb1v899trnhp96pa7nennv6gnlq6edpe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "492289823813-1vres5hcfntr9q1kcgpt25ssussgd03q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.eita.ios.pokemon-flutter-demo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,23 @@
+//
+//  Release-Develop.xcconfig
+//  Runner
+//
+//  Created by eita.yamaguchi on 2022/01/20.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.release-develop.xcconfig"
+#include "Generated.xcconfig"
+
+FLUTTER_BUILD_MODE=release
+
+OTHER_SWIFT_FLAGS = -D DEBUG
+
+BUNDLE_IDENTIFIER = dev.eita.ios.pokemon-flutter-demo.dev
+BUNDLE_DISPLAY_NAME = PokemonFlutter:Develop
+
+APP_ENV = DEV
+APP_PROVISIONING_PROFILE_SPECIFIER = match AdHoc dev.eita.ios.pokemon-flutter-demo.dev
+

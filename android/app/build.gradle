@@ -43,7 +43,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.demo_app"
+        applicationId "dev.eita.android.pokemon_flutter_demo"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
@@ -55,6 +55,28 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
+        }
+    }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        develop {
+            dimension "app"
+            resValue "string", "app_name", "Dev FlavorTest"
+            versionNameSuffix ":Develop"
+            applicationId "dev.eita.android.pokemon_flutter_demo.dev"
+        }
+        staging {
+            dimension "app"
+            resValue "string", "app_name", "FlavorTest"
+            versionNameSuffix ":Staging"
+            applicationId "dev.eita.android.pokemon_flutter_demo.dev"
+        }
+        product {
+            dimension "app"
+            resValue "string", "app_name", "FlavorTest"
+            applicationId "dev.eita.android.pokemon_flutter_demo"
         }
     }
 }
