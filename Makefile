@@ -21,10 +21,10 @@ flutter_build_product_ios:
 	flutter build ipa --release --flavor product --export-options-plist=./ios/fastlane/ExportOptions/ReleaseExportOptions.plist
 
 distribute_ios_debug_with_firebase: flutter_build_develop_ios
-	cd ios && make distribute_with_firebase
+	cd ios && make distribute_develop_with_firebase
 
 distribute_ios_staging_with_firebase: flutter_build_staging_ios
-	cd ios && make distribute_with_firebase
+	cd ios && make distribute_staging_with_firebase
 
 distribute_ios_release_with_testflight: flutter_build_product_ios
 	cd ios && make distribute_with_testflight

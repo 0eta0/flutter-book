@@ -20,8 +20,11 @@ get_adhoc_profiles:
 get_appstore_profiles:
 	$(FASTLANE) match appstore --readonly
 
-distribute_with_firebase:
-	$(FASTLANE) distribute_with_firebase
+distribute_develop_with_firebase:
+	$(FASTLANE) distribute_develop_with_firebase
+
+distribute_staging_with_firebase:
+	$(FASTLANE) distribute_staging_with_firebase
 
 distribute_with_testflight:
 	$(FASTLANE) distribute_with_testflight

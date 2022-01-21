@@ -29,14 +29,32 @@ platform :ios do
     )
   end
 
-  desc "Push a new beta build to Firebase App Distribution"
-  lane :distribute_with_firebase do
+  desc "Push a new develop build to Firebase App Distribution"
+  lane :distribute_develop_with_firebase do
     firebase_app_distribution(
       app: "1:629913001281:ios:1dcdf263be40edb31455c0",
       groups: "developer, tester",
-      release_notes: "Lots of amazing new features to test out!",
+      release_notes: "[DEVELOP]\n" + change_log_since_last_tag,
       ipa_path: IPA_PATH,
       service_credentials_file: CREDENTIALS_PATH
     )
   end
+
+  desc "Push a new staging build to Firebase App Distribution"
+  lane :distribute_develop_with_firebase do
+    firebase_app_distribution(
+      app: "1:629913001281:ios:1dcdf263be40edb31455c0",
+      groups: "developer, tester",
+      release_notes: "[STAGING]\n" + change_log_since_last_tag,
+      ipa_path: IPA_PATH,
+      service_credentials_file: CREDENTIALS_PATH
+    )
+  end
+
+  def change_log_since_last_tag
+    # http://git-scm.com/docs/pretty-formats
+    # <short hash> <commit title>
+    return changelog_from_git_commits(commits_count: 10, pretty: '%h %s')
+  end
 end
+
