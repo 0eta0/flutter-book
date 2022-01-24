@@ -12,13 +12,13 @@ flutter_run:
 
 # iOS
 flutter_build_develop_ios:
-	flutter build ipa --release --flavor develop --export-options-plist=./ios/fastlane/ExportOptions/AdHocExportOptions.plist
+	flutter build ipa --release --flavor develop --dart-define=FLAVOR=DEV --export-options-plist=./ios/fastlane/ExportOptions/AdHocExportOptions.plist
 
 flutter_build_staging_ios:
-	flutter build ipa --release --flavor staging --export-options-plist=./ios/fastlane/ExportOptions/AdHocExportOptions.plist
+	flutter build ipa --release --flavor staging --dart-define=FLAVOR=PRD --export-options-plist=./ios/fastlane/ExportOptions/AdHocExportOptions.plist
 
 flutter_build_product_ios:
-	flutter build ipa --release --flavor product --export-options-plist=./ios/fastlane/ExportOptions/ReleaseExportOptions.plist
+	flutter build ipa --release --flavor product --dart-define=FLAVOR=PRD --export-options-plist=./ios/fastlane/ExportOptions/ReleaseExportOptions.plist
 
 distribute_ios_debug_with_firebase: flutter_build_develop_ios
 	cd ios && make distribute_develop_with_firebase
@@ -31,13 +31,13 @@ distribute_ios_release_with_testflight: flutter_build_product_ios
 
 # Android
 flutter_build_develop_android:
-	flutter build apk --release --flavor develop
+	flutter build apk --release --flavor develop --dart-define=FLAVOR=DEV
 
 flutter_build_staging_android:
-	flutter build apk --release --flavor staging
+	flutter build apk --release --flavor staging --dart-define=FLAVOR=PRD
 
 flutter_build_product_android:
-	flutter build appbundle --flavor product
+	flutter build appbundle --flavor product --dart-define=FLAVOR=PRD
 
 distribute_android_debug_with_firebase: flutter_build_develop_android
 	cd android && make distribute_develop_with_firebase
