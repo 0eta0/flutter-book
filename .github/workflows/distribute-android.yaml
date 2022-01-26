@@ -1,0 +1,29 @@
+name: distribute-android
+
+on:
+  push:
+    branches:
+      - feat/gha
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.4
+          bundler-cache: true
+      - name: Clone flutter repository
+        run: git clone https://github.com/flutter/flutter.git -b 2.8.1
+      - name: Set Flutter PATH
+        run: echo $(pwd)/flutter/bin >> $GITHUB_PATH
+      - name: Set key.properties
+        run: mkdir -p .secrets && mkdir -p .secrets/android && echo -n ${{ secrets.ANDROID_KEY_PROPERTIES }} | base64 -d > .secrets/android/key.properties
+      - name: Set release-key.keystore
+        run: mkdir -p .secrets && mkdir -p .secrets/android && echo -n ${{ secrets.ANDROID_RELEASE_KEY }} | base64 -d > .secrets/android/release-key.keystore
+      - name: Set firebase service config
+        run: mkdir -p .secrets && echo -n ${{ secrets.FIREBASE_SERVICE_KEY }} | base64 -d > .secrets/flutter-appdistribution-dev-firebase-adminsdk-lwjbw-f192fffebd.json
+      - name: Distribute Android Develop
+        run: cd android && make distribute_develop

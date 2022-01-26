@@ -16,14 +16,14 @@
 DEVELOP_APK_PATH = '../build/app/outputs/flutter-apk/app-develop-release.apk'
 STAGING_APK_PATH = '../build/app/outputs/flutter-apk/app-staging-release.apk'
 AAB_PATH = '../build/app/outputs/bundle/productRelease/app-product-release.aab'
-CREDENTIALS_PATH = '../FirebaseCredentials/flutter-appdistribution-dev-firebase-adminsdk-lwjbw-f192fffebd.json'
+CREDENTIALS_PATH = '../.secrets/flutter-appdistribution-dev-firebase-adminsdk-lwjbw-f192fffebd.json'
 
 default_platform(:android)
 
 platform :android do
 
   desc "Push a new develop build to Firebase App Distribution"
-  lane :distribute_develop_with_firebase do
+  lane :distribute_develop_with_appdistribution do
     firebase_app_distribution(
       app: "1:629913001281:android:1979644468bce6891455c0",
       groups: "developer, tester",
@@ -34,7 +34,7 @@ platform :android do
   end
 
   desc "Push a new staging build to Firebase App Distribution"
-  lane :distribute_staging_with_firebase do
+  lane :distribute_staging_with_appdistribution do
     firebase_app_distribution(
       app: "1:629913001281:android:1979644468bce6891455c0",
       groups: "developer, tester",

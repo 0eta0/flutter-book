@@ -23,13 +23,45 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Push a new beta build to TestFlight
 
-### ios distribute_with_firebase
+### ios make_develop_ipa
 
 ```sh
-[bundle exec] fastlane ios distribute_with_firebase
+[bundle exec] fastlane ios make_develop_ipa
 ```
 
-Push a new beta build to Firebase App Distribution
+Build develop
+
+### ios build_develop
+
+```sh
+[bundle exec] fastlane ios build_develop
+```
+
+Build develop
+
+### ios build_staging
+
+```sh
+[bundle exec] fastlane ios build_staging
+```
+
+Build staging
+
+### ios distribute_develop_with_firebase
+
+```sh
+[bundle exec] fastlane ios distribute_develop_with_firebase
+```
+
+Push a new develop build to Firebase App Distribution
+
+### ios distribute_staging_with_firebase
+
+```sh
+[bundle exec] fastlane ios distribute_staging_with_firebase
+```
+
+Push a new staging build to Firebase App Distribution
 
 ----
 

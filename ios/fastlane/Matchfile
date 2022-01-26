@@ -1,4 +1,4 @@
-git_url("https://github.com/0eta0/pokemon-flutter-ios-cert.git")
+git_url("git@github.com:0eta0/pokemon-flutter-ios-cert.git")
 
 storage_mode("git")
 

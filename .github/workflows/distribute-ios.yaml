@@ -1,0 +1,35 @@
+name: distribute-ios
+
+on:
+  push:
+    branches:
+      - feat/gha
+
+jobs:
+  build:
+    runs-on: macos-11
+    env:
+      MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Ruby
+        run: echo "ruby-2.6.4" > ~/.ruby-version
+      - name: Select Xcode version
+        run: sudo xcode-select -s '/Applications/Xcode_13.2.1.app/Contents/Developer'
+      - name: Setup SSH
+        uses: MrSquaare/ssh-setup-action@v1
+        with:
+            host: github.com
+            private-key: ${{ secrets.IOS_CERT_KEY }}
+      - name: Make install
+        run: make install
+      - name: Clone flutter repository
+        run: git clone https://github.com/flutter/flutter.git -b 2.8.1
+      - name: Set Flutter PATH
+        run: echo $(pwd)/flutter/bin >> $GITHUB_PATH
+      - name: Set appstore-key
+        run: mkdir -p .secrets && mkdir -p .secrets/ios && echo -n ${{ secrets.APPSTORE_KEY }} | base64 -d > .secrets/ios/appstore-key.json
+      - name: Set firebase service config
+        run: mkdir -p .secrets && echo -n ${{ secrets.FIREBASE_SERVICE_KEY }} | base64 -d > .secrets/flutter-appdistribution-dev-firebase-adminsdk-lwjbw-f192fffebd.json
+      - name: Distribute iOS Develop
+        run: cd ios && make distribute_develop

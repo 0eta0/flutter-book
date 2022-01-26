@@ -15,18 +15,18 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## Android
 
-### android distribute_develop_with_firebase
+### android distribute_develop_with_appdistribution
 
 ```sh
-[bundle exec] fastlane android distribute_develop_with_firebase
+[bundle exec] fastlane android distribute_develop_with_appdistribution
 ```
 
 Push a new develop build to Firebase App Distribution
 
-### android distribute_staging_with_firebase
+### android distribute_staging_with_appdistribution
 
 ```sh
-[bundle exec] fastlane android distribute_staging_with_firebase
+[bundle exec] fastlane android distribute_staging_with_appdistribution
 ```
 
 Push a new staging build to Firebase App Distribution
