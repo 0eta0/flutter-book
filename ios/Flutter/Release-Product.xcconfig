@@ -11,7 +11,6 @@
 #include "Pods/Target Support Files/Pods-Runner/Pods-Runner.release-product.xcconfig"
 #include "Generated.xcconfig"
 
-FLUTTER_BUILD_MODE=release
 
 BUNDLE_IDENTIFIER = dev.eita.ios.pokemon-flutter-demo
 BUNDLE_DISPLAY_NAME = PokemonFlutter

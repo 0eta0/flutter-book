@@ -10,7 +10,6 @@
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		19422EF027969DD70023B582 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19422EEF27969DD70023B582 /* GoogleService-Info.plist */; };
 		19422EF52797DF1A0023B582 /* GoogleService-Info.dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19422EF42797DF1A0023B582 /* GoogleService-Info.dev.plist */; };
-		19A8CA8027995AF800B62A54 /* Debug-Develop.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 19A8CA7F27995AF800B62A54 /* Debug-Develop.xcconfig */; };
 		19A8CA8327995CDE00B62A54 /* Release-Product.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 19A8CA8227995CDE00B62A54 /* Release-Product.xcconfig */; };
 		19A8CA8427995CE600B62A54 /* Release-Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 19A8CA8127995B6D00B62A54 /* Release-Staging.xcconfig */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
@@ -41,7 +40,6 @@
 		19422EF42797DF1A0023B582 /* GoogleService-Info.dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.dev.plist"; sourceTree = "<group>"; };
 		19A8CA752799371700B62A54 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19A8CA762799371900B62A54 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		19A8CA7F27995AF800B62A54 /* Debug-Develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Debug-Develop.xcconfig"; path = "Flutter/Debug-Develop.xcconfig"; sourceTree = "<group>"; };
 		19A8CA8127995B6D00B62A54 /* Release-Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Release-Staging.xcconfig"; path = "Flutter/Release-Staging.xcconfig"; sourceTree = "<group>"; };
 		19A8CA8227995CDE00B62A54 /* Release-Product.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Release-Product.xcconfig"; path = "Flutter/Release-Product.xcconfig"; sourceTree = "<group>"; };
 		19A8CA85279972E800B62A54 /* Release-Develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Release-Develop.xcconfig"; path = "Flutter/Release-Develop.xcconfig"; sourceTree = "<group>"; };
@@ -51,7 +49,6 @@
 		56D0A753EFA2D02A719B6606 /* Pods-Runner.release-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release-staging.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release-staging.xcconfig"; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
 		7C3FCF8204569A40B606414A /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 		8E727CE367D71E54BA619BCC /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
@@ -103,10 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */,
-				9740EEB21CF90195004384FC /* Debug.xcconfig */,
-				7AFA3C8E1D35360C0083082E /* Release.xcconfig */,
 				9740EEB31CF90195004384FC /* Generated.xcconfig */,
-				19A8CA7F27995AF800B62A54 /* Debug-Develop.xcconfig */,
+				9740EEB21CF90195004384FC /* Debug.xcconfig */,
 				19A8CA85279972E800B62A54 /* Release-Develop.xcconfig */,
 				19A8CA8127995B6D00B62A54 /* Release-Staging.xcconfig */,
 				19A8CA8227995CDE00B62A54 /* Release-Product.xcconfig */,
@@ -224,7 +219,6 @@
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				19422EF027969DD70023B582 /* GoogleService-Info.plist in Resources */,
-				19A8CA8027995AF800B62A54 /* Debug-Develop.xcconfig in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				19A8CA8427995CE600B62A54 /* Release-Staging.xcconfig in Resources */,
 				19422EF52797DF1A0023B582 /* GoogleService-Info.dev.plist in Resources */,
@@ -356,7 +350,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		19A8CA772799410C00B62A54 /* Debug-Develop */ = {
+		19A8CA772799410C00B62A54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -410,11 +404,11 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = "Debug-Develop";
+			name = Debug;
 		};
-		19A8CA782799410C00B62A54 /* Debug-Develop */ = {
+		19A8CA782799410C00B62A54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19A8CA7F27995AF800B62A54 /* Debug-Develop.xcconfig */;
+			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -436,7 +430,7 @@
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
-			name = "Debug-Develop";
+			name = Debug;
 		};
 		19A8CA7B2799413E00B62A54 /* Release-Staging */ = {
 			isa = XCBuildConfiguration;
@@ -682,24 +676,24 @@
 		97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Runner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				19A8CA772799410C00B62A54 /* Debug-Develop */,
+				19A8CA772799410C00B62A54 /* Debug */,
 				19A8CA88279974DA00B62A54 /* Release-Develop */,
 				19A8CA7D2799445A00B62A54 /* Release-Product */,
 				19A8CA7B2799413E00B62A54 /* Release-Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Debug-Develop";
+			defaultConfigurationName = Debug;
 		};
 		97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				19A8CA782799410C00B62A54 /* Debug-Develop */,
+				19A8CA782799410C00B62A54 /* Debug */,
 				19A8CA89279974DA00B62A54 /* Release-Develop */,
 				19A8CA7E2799445A00B62A54 /* Release-Product */,
 				19A8CA7C2799413E00B62A54 /* Release-Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Debug-Develop";
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
