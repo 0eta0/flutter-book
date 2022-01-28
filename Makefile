@@ -12,4 +12,4 @@ bundle_install:
 # Debug
 
 flutter_run:
-	flutter run --debug --flavor develop
+	flutter run --debug --dart-define=FLAVOR=DEV
