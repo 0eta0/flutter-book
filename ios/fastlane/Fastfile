@@ -13,42 +13,91 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-IPA_PATH = '../build/ios/ipa/Runner.ipa'
-APPSTORE_API_KEY_PATH = './fastlane/AppStoreApiKey/key.json'
-CREDENTIALS_PATH = '../FirebaseCredentials/flutter-appdistribution-dev-firebase-adminsdk-lwjbw-f192fffebd.json'
+APPSTORE_API_KEY_PATH = '../.secrets/ios/appstore-key.json'
+CREDENTIALS_PATH = '../.secrets/flutter-appdistribution-dev-firebase-adminsdk-lwjbw-f192fffebd.json'
 
 default_platform(:ios)
 
-platform :ios do
-  desc "Push a new beta build to TestFlight"
-  lane :distribute_with_testflight do
-    upload_to_testflight(
-      skip_waiting_for_build_processing: true,
-      api_key_path: APPSTORE_API_KEY_PATH,
-      ipa: IPA_PATH
-    )
+  platform :ios do
+    before_all do
+      if is_ci?
+        setup_ci
+    end
+  end
+
+  desc "Build IPA for develop"
+  lane :make_develop_ipa do
+    make_ipa("develop")
+  end
+
+  desc "Build IPA for staging"
+  lane :make_staging_ipa do
+    make_ipa("staging")
   end
 
   desc "Push a new develop build to Firebase App Distribution"
-  lane :distribute_develop_with_firebase do
+  lane :distribute_develop_with_appdistribution do
+    make_ipa("develop")
     firebase_app_distribution(
       app: "1:629913001281:ios:1dcdf263be40edb31455c0",
       groups: "developer, tester",
       release_notes: "[DEVELOP]\n" + change_log_since_last_tag,
-      ipa_path: IPA_PATH,
+      ipa_path: lane_context[SharedValues::IPA_OUTPUT_PATH],
       service_credentials_file: CREDENTIALS_PATH
     )
   end
 
   desc "Push a new staging build to Firebase App Distribution"
-  lane :distribute_develop_with_firebase do
+  lane :distribute_staging_with_appdistribution do
+    make_ipa("staging")
     firebase_app_distribution(
       app: "1:629913001281:ios:1dcdf263be40edb31455c0",
       groups: "developer, tester",
       release_notes: "[STAGING]\n" + change_log_since_last_tag,
-      ipa_path: IPA_PATH,
+      ipa_path: lane_context[SharedValues::IPA_OUTPUT_PATH],
       service_credentials_file: CREDENTIALS_PATH
     )
+  end
+
+  desc "Push a new beta build to TestFlight"
+  lane :distribute_with_testflight do
+    make_ipa("release")
+    upload_to_testflight(
+      skip_waiting_for_build_processing: false,
+      api_key_path: lane_context[SharedValues::IPA_OUTPUT_PATH],
+      ipa: lane_context[SharedValues::IPA_OUTPUT_PATH]
+    )
+  end
+
+  def make_ipa(type)
+    case type
+    when "develop" then
+      match(type: "adhoc", readonly: true)
+      gym(
+        clean: true,
+        scheme: "Develop",
+        workspace: "Runner.xcworkspace",
+        export_options: "./ExportOptions/AdHocExportOptions.plist"
+      )
+    when "staging" then
+      match(type: "adhoc", readonly: true)
+      gym(
+        clean: true,
+        scheme: "Staging",
+        workspace: "Runner.xcworkspace",
+        export_options: "./ExportOptions/AdHocExportOptions.plist"
+      )
+    when "release" then
+      match(type: "appstore", readonly: true)
+      gym(
+        clean: true,
+        scheme: "Product",
+        workspace: "Runner.xcworkspace",
+        export_options: "./ExportOptions/ReleaseExportOptions.plist"
+      )
+    else
+      puts "invalid type"
+    end
   end
 
   def change_log_since_last_tag

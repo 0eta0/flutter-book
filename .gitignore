@@ -45,11 +45,6 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-## bundler
-
-vendor/
-.bundle/config
-
-FirebaseCredentials/
-
-node_modules/
+## Custom
+.secrets/*
+vendor/bundle
