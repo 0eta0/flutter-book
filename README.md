@@ -8,3 +8,4 @@
 - Fastlane
   - match
   - App Distribution
+- [hooks_riverpod](https://pub.dev/packages/hooks_riverpod)
