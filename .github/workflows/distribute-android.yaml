@@ -1,9 +1,10 @@
 name: distribute-android
 
 on:
-  push:
+  pull_request:
     branches:
-      - feat/gha
+      - main
+    types: [closed]
 
 jobs:
   build:
